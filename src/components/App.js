@@ -8,7 +8,6 @@ function App() {
 
   useEffect(() => {
     callToApi().then((response) => {
-      console.log(response);
       setDataCharacter(response);
     });
   }, []);
@@ -16,7 +15,7 @@ function App() {
     <div className="App">
       {/* <Header /> */}
       <main>
-        <CharacterList dataCharacter={dataCharacter} />
+        <CharacterList character={dataCharacter} />
       </main>
     </div>
   );
