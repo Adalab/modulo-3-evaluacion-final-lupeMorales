@@ -8,15 +8,22 @@ function App() {
   const [dataCharacter, setDataCharacter] = useState([]);
   const [inputFilterName, setInputFilterName] = useState("");
 
-  const handleFilterName = (inputValue) => {
-    setInputFilterName(inputValue);
-  };
-
   useEffect(() => {
     callToApi().then((response) => {
       setDataCharacter(response);
     });
   }, []);
+
+  const handleFilterName = (inputValue) => {
+    setInputFilterName(inputValue);
+  };
+
+  const filteredCharacters = dataCharacter.filter((item) => {
+    return item.name
+      .toLowerCase()
+      .includes(inputFilterName.toLocaleLowerCase());
+  });
+
   return (
     <div className="App">
       {/* <Header /> */}
@@ -25,7 +32,7 @@ function App() {
           inputFilterName={inputFilterName}
           handleFilterName={handleFilterName}
         />
-        <CharacterList character={dataCharacter} />
+        <CharacterList character={filteredCharacters} />
       </main>
     </div>
   );
