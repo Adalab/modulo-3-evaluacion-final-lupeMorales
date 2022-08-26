@@ -1,10 +1,15 @@
 import "../styles/App.css";
 import callToApi from "../services/api";
 import { useEffect, useState } from "react";
+//route
+import { Routes, Route } from "react-router-dom";
 //components
 import Filters from "./Filters";
 import CharacterList from "./CharacterList";
+import CharacterDetails from "./CharacterDetails";
+
 function App() {
+  //variables de estado
   const [dataCharacter, setDataCharacter] = useState([]);
   const [inputFilterName, setInputFilterName] = useState("");
   const [inputFiterHouse, setInputFilterHouse] = useState("gryffindor");
@@ -35,14 +40,27 @@ function App() {
   return (
     <div className="App">
       {/* <Header /> */}
-
-      <Filters
-        inputFilterName={inputFilterName}
-        handleFilterName={handleFilterName}
-        inputFiterHouse={inputFiterHouse}
-        handleFilterHouse={handleFilterHouse}
-      />
-      <CharacterList character={filteredCharacters} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              {" "}
+              <Filters
+                inputFilterName={inputFilterName}
+                handleFilterName={handleFilterName}
+                inputFiterHouse={inputFiterHouse}
+                handleFilterHouse={handleFilterHouse}
+              />
+              <CharacterList character={filteredCharacters} />
+            </>
+          }
+        />
+        <Route
+          path="/character/:id"
+          element={<CharacterDetails character={filteredCharacters} />}
+        ></Route>
+      </Routes>
     </div>
   );
 }
