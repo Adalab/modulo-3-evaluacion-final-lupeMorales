@@ -5,9 +5,11 @@ import { useEffect, useState } from "react";
 import { matchPath, useLocation } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 //components
+import Header from "./Header";
 import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 import CharacterDetails from "./CharacterDetails";
+import Footer from "./Footer";
 
 function App() {
   //variables de estado
@@ -44,7 +46,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route
           path="/"
@@ -65,6 +67,7 @@ function App() {
           element={<CharacterDetails character={foundCharacters} />}
         ></Route>
       </Routes>
+      <Footer />
     </div>
   );
 }
