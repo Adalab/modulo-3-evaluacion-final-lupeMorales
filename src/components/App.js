@@ -1,8 +1,8 @@
 import "../styles/App.css";
-import { v4 as uuidv4 } from "uuid";
 import callToApi from "../services/api";
 import { useEffect, useState } from "react";
 //route
+import { matchPath, useLocation } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 //components
 import Filters from "./Filters";
@@ -37,6 +37,10 @@ function App() {
     .filter((item) => {
       return item.house.toLowerCase() === inputFiterHouse;
     });
+  const { pathname } = useLocation();
+  const dataPath = matchPath("/character/:id", pathname);
+  const characterId = dataPath !== null ? dataPath.params.id : null;
+  const foundCharacters = dataCharacter.find((item) => item.id === characterId);
 
   return (
     <div className="App">
@@ -46,7 +50,6 @@ function App() {
           path="/"
           element={
             <>
-              {" "}
               <Filters
                 inputFilterName={inputFilterName}
                 handleFilterName={handleFilterName}
@@ -59,7 +62,7 @@ function App() {
         />
         <Route
           path="/character/:id"
-          element={<CharacterDetails character={filteredCharacters} />}
+          element={<CharacterDetails character={foundCharacters} />}
         ></Route>
       </Routes>
     </div>
