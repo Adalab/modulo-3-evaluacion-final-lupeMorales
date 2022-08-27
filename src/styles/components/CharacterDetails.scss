@@ -1,0 +1,18 @@
+.detail {
+  background-color: #dcab8b;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  &__container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    background-color: #256d69;
+    width: 75%;
+    border-radius: 25px;
+  }
+}
