@@ -10,33 +10,44 @@
 
   &__title {
     font-family: $secondaryFont;
-    font-size: 8rem;
+    font-size: 6rem;
     color: #256d69;
     transform: scaleY(1.4);
     z-index: 999;
+    padding-top: 25px;
+    @media all and (min-width: 768px) {
+      font-size: 8rem;
+    }
   }
   &__title::first-letter {
     text-transform: uppercase;
   }
   &__subtitle {
     display: block;
-    width: 148px;
+    width: 120px;
     padding: 15px 0;
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     background-color: #e3e3c9;
     color: #256d69;
-    transform: translate(90px, -15px);
+    transform: translate(75px, -12px);
     z-index: 800;
+    @media all and (min-width: 768px) {
+      width: 148px;
+      font-size: 1.8rem;
+      transform: translate(90px, -15px);
+    }
   }
 
   &__line {
     border-top: 3px solid #256d69;
     height: 2px;
     width: 100%;
-    padding: 0;
     margin: 20px auto 0;
     position: absolute;
-    top: 16%;
+    top: 17%;
+    @media all and (min-width: 768px) {
+      top: 19%;
+    }
   }
 }
