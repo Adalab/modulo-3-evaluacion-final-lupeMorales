@@ -1,3 +1,4 @@
+import "../styles/layout/Main.scss";
 import CharacterCard from "./CharacterCard";
 
 const CharacterList = (props) => {
@@ -5,8 +6,8 @@ const CharacterList = (props) => {
     return <CharacterCard key={index} char={char} />;
   });
   return (
-    <section>
-      <ul>{renderCharList}</ul>
+    <section className="list">
+      <ul className="list__element">{renderCharList}</ul>
     </section>
   );
 };
