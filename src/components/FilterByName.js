@@ -2,6 +2,12 @@ const FilterByName = (props) => {
   const handleFilterName = (ev) => {
     props.handleFilterName(ev.target.value);
   };
+  const pressEnter = (ev) => {
+    if (ev.keyCode === 13) {
+      ev.preventDefault();
+      return false;
+    }
+  };
 
   return (
     <>
@@ -15,6 +21,7 @@ const FilterByName = (props) => {
         placeholder="Harry Potter..."
         value={props.inputFilterName}
         onChange={handleFilterName}
+        onKeyDown={pressEnter}
       ></input>
     </>
   );

@@ -1,10 +1,11 @@
+import imageDefault from "../images/logoHP.jpg";
 import { Link } from "react-router-dom";
 const CharacterCard = (props) => {
   return (
     <li>
       <Link to={`/character/${props.char.id}`}>
         <img
-          src={props.char.image}
+          src={props.char.image || imageDefault}
           alt={`Foto de ${props.char.name}`}
           title={`Foto de ${props.char.name}`}
         ></img>
@@ -15,4 +16,5 @@ const CharacterCard = (props) => {
     </li>
   );
 };
+
 export default CharacterCard;
