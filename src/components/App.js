@@ -34,7 +34,12 @@ function App() {
     if (inputFilterName !== "" && filteredCharacters.length === 0) {
       console.log("no miseila no hay nadie con ese nombre");
       return (
-        <p className="warning">No mi siela{inputFilterName} debe ser muggle</p>
+        <div className="warning">
+          <p className="warning__msg">
+            Oh vaya! No hay encantamiento que encuentre a
+            <span className="warning__msg--strong"> {inputFilterName}</span>
+          </p>
+        </div>
       );
     }
   };
