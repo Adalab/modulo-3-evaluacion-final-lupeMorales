@@ -65,16 +65,17 @@ function App() {
           path="/"
           element={
             <>
-              <Filters
-                inputFilterName={inputFilterName}
-                handleFilterName={handleFilterName}
-                inputFiterHouse={inputFiterHouse}
-                handleFilterHouse={handleFilterHouse}
-                reset={resetForm}
-              />
-
-              <CharacterList character={filteredCharacters} />
-              {searchResult()}
+              <main className="main">
+                <Filters
+                  inputFilterName={inputFilterName}
+                  handleFilterName={handleFilterName}
+                  inputFiterHouse={inputFiterHouse}
+                  handleFilterHouse={handleFilterHouse}
+                  reset={resetForm}
+                />
+                <CharacterList character={filteredCharacters} />
+                {searchResult()}
+              </main>
             </>
           }
         />
