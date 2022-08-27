@@ -1,4 +1,4 @@
-import "../styles/App.css";
+import "../styles/App.scss";
 import callToApi from "../services/api";
 import { useEffect, useState } from "react";
 //route
@@ -16,6 +16,7 @@ function App() {
   const [dataCharacter, setDataCharacter] = useState([]);
   const [inputFilterName, setInputFilterName] = useState("");
   const [inputFiterHouse, setInputFilterHouse] = useState("gryffindor");
+  const [warning, setWarning] = useState("");
 
   useEffect(() => {
     callToApi().then((response) => {
@@ -29,7 +30,14 @@ function App() {
   const handleFilterHouse = (inputValue) => {
     setInputFilterHouse(inputValue);
   };
-
+  const searchResult = () => {
+    if (inputFilterName !== "" && filteredCharacters.length === 0) {
+      console.log("no miseila no hay nadie con ese nombre");
+      return (
+        <p className="warning">No mi siela{inputFilterName} debe ser muggle</p>
+      );
+    }
+  };
   const filteredCharacters = dataCharacter
     .filter((item) => {
       return item.name
@@ -39,6 +47,11 @@ function App() {
     .filter((item) => {
       return item.house.toLowerCase() === inputFiterHouse;
     });
+
+  const resetForm = () => {
+    setInputFilterName("");
+    setInputFilterHouse("gryffindor");
+  };
   const { pathname } = useLocation();
   const dataPath = matchPath("/character/:id", pathname);
   const characterId = dataPath !== null ? dataPath.params.id : null;
@@ -57,11 +70,15 @@ function App() {
                 handleFilterName={handleFilterName}
                 inputFiterHouse={inputFiterHouse}
                 handleFilterHouse={handleFilterHouse}
+                reset={resetForm}
               />
+
               <CharacterList character={filteredCharacters} />
+              {searchResult()}
             </>
           }
         />
+
         <Route
           path="/character/:id"
           element={<CharacterDetails character={foundCharacters} />}

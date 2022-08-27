@@ -1,6 +1,10 @@
 import FilterByName from "./FilterByName";
 import FilterByHouse from "./FilterByHouse";
 const Filters = (props) => {
+  const reset = (ev) => {
+    ev.preventDefault();
+    props.reset();
+  };
   return (
     <main>
       <form>
@@ -12,6 +16,10 @@ const Filters = (props) => {
           inputFilterHouse={props.inputFilterHouse}
           handleFilterHouse={props.handleFilterHouse}
         />
+        <button type="button" onClick={reset}>
+          <i className="fa-regular fa-trash-can"></i>
+          reset
+        </button>
       </form>
     </main>
   );
