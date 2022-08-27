@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 const CharacterDetails = (props) => {
   return (
     <section>
-      <a href="#">
+      <Link to="/">
         <p>Volver</p>
-      </a>
+      </Link>
       <img
         src={props.character.image}
         alt={`Foto de ${props.character.name}`}

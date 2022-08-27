@@ -16,7 +16,7 @@ function App() {
   const [dataCharacter, setDataCharacter] = useState([]);
   const [inputFilterName, setInputFilterName] = useState("");
   const [inputFiterHouse, setInputFilterHouse] = useState("gryffindor");
-  const [warning, setWarning] = useState("");
+  const [inputOrder, setInputOrder] = useState(false);
 
   useEffect(() => {
     callToApi().then((response) => {
@@ -30,9 +30,12 @@ function App() {
   const handleFilterHouse = (inputValue) => {
     setInputFilterHouse(inputValue);
   };
+  const handleFilterOrder = (value) => {
+    setInputOrder(value);
+  };
+
   const searchResult = () => {
     if (inputFilterName !== "" && filteredCharacters.length === 0) {
-      console.log("no miseila no hay nadie con ese nombre");
       return (
         <div className="warning">
           <p className="warning__msg">
@@ -43,6 +46,7 @@ function App() {
       );
     }
   };
+
   const filteredCharacters = dataCharacter
     .filter((item) => {
       return item.name
@@ -53,9 +57,22 @@ function App() {
       return item.house.toLowerCase() === inputFiterHouse;
     });
 
+  //oderna si checkbox esta pulsado OJOCUIDAO no lo entiendo
+  if (inputOrder === true) {
+    filteredCharacters.sort((a, b) => {
+      if (a.name > b.name) {
+        return 1;
+      }
+      if (a.name < b.name) {
+        return -1;
+      }
+      return 0;
+    });
+  }
   const resetForm = () => {
     setInputFilterName("");
     setInputFilterHouse("gryffindor");
+    setInputOrder(false);
   };
   const { pathname } = useLocation();
   const dataPath = matchPath("/character/:id", pathname);
@@ -76,9 +93,14 @@ function App() {
                   handleFilterName={handleFilterName}
                   inputFiterHouse={inputFiterHouse}
                   handleFilterHouse={handleFilterHouse}
-                  reset={resetForm}
+                  inputOrder={inputOrder}
+                  handleFilterOrder={handleFilterOrder}
+                  resetForm={resetForm}
                 />
-                <CharacterList character={filteredCharacters} />
+                <CharacterList
+                  character={filteredCharacters}
+                  inputOrder={inputOrder}
+                />
                 {searchResult()}
               </main>
             </>

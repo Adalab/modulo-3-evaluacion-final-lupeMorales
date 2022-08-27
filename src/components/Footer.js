@@ -11,7 +11,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="fa-brands fa-github-alt  fa-2x"></i>
+            <i className="fa-brands fa-github-alt  fa-2x"></i>
           </a>
 
           <a
@@ -19,7 +19,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="fa-brands fa-linkedin fa-2x"></i>
+            <i className="fa-brands fa-linkedin fa-2x"></i>
           </a>
 
           <a
@@ -27,7 +27,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="fa-brands fa-twitter fa-2x"></i>
+            <i className="fa-brands fa-twitter fa-2x"></i>
           </a>
         </nav>
       </div>
