@@ -1,5 +1,5 @@
 import "../styles/components/CharacterCard.scss";
-import imageDefault from "../images/logoHP.jpg";
+import imageDefault from "../images/imgDefault.png";
 import { Link } from "react-router-dom";
 const CharacterCard = (props) => {
   return (
