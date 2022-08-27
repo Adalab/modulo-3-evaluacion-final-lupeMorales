@@ -2,16 +2,32 @@ import "../styles/layout/Footer.scss";
 const Footer = () => {
   return (
     <footer className="footer">
-      <p className="footer__text">2022 lupeMorales</p>
+      <p className="footer__text">2022&copy; lupeMorales</p>
       <div>
         <p className="footer__text">see more about me on:</p>
         <nav className="footer__nav">
-          <a href="github">
-            <i class="fa-brands fa-github-alt"></i>
+          <a
+            href="https://github.com/lupeMorales"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-github-alt  fa-2x"></i>
           </a>
-          <i class="fa-brands fa-linkedin"></i>
-          <a href="twitter">
-            <i class="fa-brands fa-twitter"></i>
+
+          <a
+            href="https://www.linkedin.com/in/lupe-morales-817245226/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-linkedin fa-2x"></i>
+          </a>
+
+          <a
+            href="https://twitter.com/lacanellyatope"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-twitter fa-2x"></i>
           </a>
         </nav>
       </div>
