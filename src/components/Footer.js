@@ -1,3 +1,4 @@
+import "../styles/layout/Footer.scss";
 const Footer = () => {
   return (
     <footer className="footer">
@@ -5,9 +6,13 @@ const Footer = () => {
       <div>
         <p className="footer__text">see more about me on:</p>
         <nav className="footer__nav">
-          <a href="github">x</a>
-          <a href="linkdin">x</a>
-          <a href="twitter">x</a>
+          <a href="github">
+            <i class="fa-brands fa-github-alt"></i>
+          </a>
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="twitter">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
         </nav>
       </div>
     </footer>

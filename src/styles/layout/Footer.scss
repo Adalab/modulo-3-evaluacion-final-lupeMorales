@@ -1,0 +1,21 @@
+.footer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background-color: #e3e3c9;
+  color: #256d69;
+  &__text {
+    font-size: 1.2rem;
+  }
+  &__nav {
+    display: flex;
+    justify-content: end;
+  }
+}
+.fa-brands {
+  color: #256d69;
+  list-style: none;
+  padding: 0 5px;
+}
