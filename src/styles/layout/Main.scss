@@ -1,7 +1,7 @@
 @import "../core/variables.scss";
 .main {
   width: 100%;
-  height: auto;
+  min-height: 75vh;
   background-color: #dcab8b;
   padding: 25px 0;
 }

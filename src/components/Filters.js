@@ -20,6 +20,7 @@ const Filters = (props) => {
       <FilterByAncestry
         inputFilterAncestry={props.inputFilterAncestry}
         handleFilterAncestry={props.handleFilterAncestry}
+        ancestry={props.ancestry}
       />
 
       <FilterByAlphabetic

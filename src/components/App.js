@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { matchPath, useLocation } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 //components
+import Loader from "./Loader";
 import Header from "./Header";
 import Filters from "./Filters";
 import CharacterList from "./CharacterList";
@@ -19,15 +20,16 @@ function App() {
   const [inputFilterName, setInputFilterName] = useState(
     ls.get("inputName", "")
   );
-
   const [inputFiterHouse, setInputFilterHouse] = useState(lsInputHouse);
-
   const [inputFilterAncestry, setInputAncestry] = useState([]);
   const [inputOrder, setInputOrder] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     callToApi().then((response) => {
       setDataCharacter(response);
+      setIsLoading(false);
     });
   }, []);
   useEffect(() => {
@@ -42,7 +44,13 @@ function App() {
     setInputFilterHouse(inputValue);
   };
   const handleFilterAncestry = (value) => {
-    setInputAncestry(value);
+    if (inputFilterAncestry.includes(value)) {
+      const position = inputFilterAncestry.indexOf(value);
+      filteredCharacters.splice(position, 1);
+      setInputAncestry(inputFilterAncestry);
+    } else {
+      setInputAncestry([...inputFilterAncestry, value]);
+    }
   };
   const handleFilterOrder = (value) => {
     setInputOrder(value);
@@ -72,7 +80,23 @@ function App() {
         return true;
       }
       return item.house.toLowerCase() === inputFiterHouse;
+    })
+    .filter((item) => {
+      if (inputFilterAncestry.length === 0) {
+        return true;
+      } else {
+        return inputFilterAncestry.includes(item.ancestry);
+      }
     });
+  const getAncestry = () => {
+    const ancestry = dataCharacter.map((item) => item.ancestry);
+    //set para quedarme solo con valores unicos
+    const ancestrySet = new Set(ancestry);
+    const singleAncestry = [...ancestrySet];
+    return singleAncestry;
+  };
+
+  //set
 
   //oderna si checkbox esta pulsado OJOCUIDAO no lo entiendo
   if (inputOrder === true) {
@@ -113,6 +137,7 @@ function App() {
                   handleFilterHouse={handleFilterHouse}
                   inputFilterAncestry={inputFilterAncestry}
                   handleFilterAncestry={handleFilterAncestry}
+                  ancestry={getAncestry()}
                   inputOrder={inputOrder}
                   handleFilterOrder={handleFilterOrder}
                   resetForm={resetForm}
@@ -121,6 +146,7 @@ function App() {
                   character={filteredCharacters}
                   inputOrder={inputOrder}
                 />
+                {isLoading ? <Loader /> : null}
                 {searchResult()}
               </main>
             </>

@@ -1,8 +1,25 @@
-import "../styles/components/"
+import "../styles/components/Loader.scss";
 const Loader = () => {
-  return {
-  
-    <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-  };
+  return (
+    <div className="wrapper">
+      <div className="loader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  );
 };
 export default Loader;

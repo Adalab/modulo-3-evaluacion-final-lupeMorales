@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const CharacterDetails = (props) => {
   return (
     <section className="detail">
-      <Link to="/">
+      <Link to="/" title="volver">
         <i class="fa-solid fa-door-open fa-lg"></i>
       </Link>
       <article className="detail__container">
@@ -31,7 +31,9 @@ const CharacterDetails = (props) => {
               <i class="fa-solid fa-venus"></i>
             )}
           </p>
-          <p className="detail__text">Ancestro: {props.character.ancestry}</p>
+          <p className="detail__text">
+            Ancestro: {props.character.ancestry || "desconocido"}
+          </p>
           <p className="detail__text">
             Status:{" "}
             {props.character.status === true ? (
