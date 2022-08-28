@@ -39,7 +39,7 @@ const CharacterDetails = (props) => {
             {props.character.status === true ? (
               <i class="fa-solid fa-heart"></i>
             ) : (
-              <i class="fa-solid fa-tombstone"></i>
+              <i class="fa-solid fa-skull"></i>
             )}
           </p>
         </div>

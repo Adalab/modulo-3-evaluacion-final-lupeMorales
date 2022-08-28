@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { matchPath, useLocation } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 //components
+import NotFound from "./NotFound";
 import Loader from "./Loader";
 import Header from "./Header";
 import Filters from "./Filters";
@@ -157,6 +158,7 @@ function App() {
           path="/character/:id"
           element={<CharacterDetails character={foundCharacters} />}
         ></Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer />
     </div>
