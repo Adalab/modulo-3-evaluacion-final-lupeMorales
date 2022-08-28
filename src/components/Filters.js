@@ -1,5 +1,6 @@
 import FilterByName from "./FilterByName";
 import FilterByHouse from "./FilterByHouse";
+import FilterByAncestry from "./FilterByAncestry";
 import FilterByAlphabetic from "./FilterByAlphabetic";
 const Filters = (props) => {
   const reset = (ev) => {
@@ -16,6 +17,11 @@ const Filters = (props) => {
         inputFilterHouse={props.inputFilterHouse}
         handleFilterHouse={props.handleFilterHouse}
       />
+      <FilterByAncestry
+        inputFilterAncestry={props.inputFilterAncestry}
+        handleFilterAncestry={props.handleFilterAncestry}
+      />
+
       <FilterByAlphabetic
         inputOrder={props.inputOrder}
         handleFilterOrder={props.handleFilterOrder}

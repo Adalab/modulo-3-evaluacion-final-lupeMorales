@@ -1,5 +1,6 @@
 import "../styles/App.scss";
 import callToApi from "../services/api";
+import ls from "../services/localStorage";
 import { useEffect, useState } from "react";
 //route
 import { matchPath, useLocation } from "react-router-dom";
@@ -12,10 +13,16 @@ import CharacterDetails from "./CharacterDetails";
 import Footer from "./Footer";
 
 function App() {
+  const lsInputHouse = ls.get("inputHouse", "gryffindor");
   //variables de estado
   const [dataCharacter, setDataCharacter] = useState([]);
-  const [inputFilterName, setInputFilterName] = useState("");
-  const [inputFiterHouse, setInputFilterHouse] = useState("gryffindor");
+  const [inputFilterName, setInputFilterName] = useState(
+    ls.get("inputName", "")
+  );
+
+  const [inputFiterHouse, setInputFilterHouse] = useState(lsInputHouse);
+
+  const [inputFilterAncestry, setInputAncestry] = useState([]);
   const [inputOrder, setInputOrder] = useState(false);
 
   useEffect(() => {
@@ -23,12 +30,19 @@ function App() {
       setDataCharacter(response);
     });
   }, []);
+  useEffect(() => {
+    ls.set("imputName", inputFilterName);
+    ls.set("imputHouse", setInputFilterHouse);
+  }, [inputFilterName, setInputFilterHouse]);
 
   const handleFilterName = (inputValue) => {
     setInputFilterName(inputValue);
   };
   const handleFilterHouse = (inputValue) => {
     setInputFilterHouse(inputValue);
+  };
+  const handleFilterAncestry = (value) => {
+    setInputAncestry(value);
   };
   const handleFilterOrder = (value) => {
     setInputOrder(value);
@@ -54,6 +68,9 @@ function App() {
         .includes(inputFilterName.toLocaleLowerCase());
     })
     .filter((item) => {
+      if (inputFiterHouse === "all") {
+        return true;
+      }
       return item.house.toLowerCase() === inputFiterHouse;
     });
 
@@ -94,6 +111,8 @@ function App() {
                   handleFilterName={handleFilterName}
                   inputFiterHouse={inputFiterHouse}
                   handleFilterHouse={handleFilterHouse}
+                  inputFilterAncestry={inputFilterAncestry}
+                  handleFilterAncestry={handleFilterAncestry}
                   inputOrder={inputOrder}
                   handleFilterOrder={handleFilterOrder}
                   resetForm={resetForm}
