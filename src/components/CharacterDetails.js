@@ -21,7 +21,7 @@ const CharacterDetails = (props) => {
         <div className="detail__info">
           <h3 className="detail__title">{props.character.name}</h3>
 
-          <p className="detail__text">{props.character.specie}</p>
+          <p className="detail__text">Raza: {props.character.specie}</p>
           <p className="detail__text">Casa: {props.character.house}</p>
           <p className="detail__text">
             Género:{" "}
