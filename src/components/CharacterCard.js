@@ -1,11 +1,14 @@
 import "../styles/components/CharacterCard.scss";
 import imageDefault from "../images/imgDefault.png";
+
 import { Link } from "react-router-dom";
 const CharacterCard = (props) => {
+
   return (
     <li className="card">
       <Link to={`/character/${props.char.id}`}>
         <article className="card__container">
+          
           <h3 className="card__name">{props.char.name}</h3>
           <img
             className="card__image"

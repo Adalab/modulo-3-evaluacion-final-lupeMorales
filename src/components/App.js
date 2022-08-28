@@ -74,6 +74,7 @@ function App() {
     setInputFilterHouse("gryffindor");
     setInputOrder(false);
   };
+
   const { pathname } = useLocation();
   const dataPath = matchPath("/character/:id", pathname);
   const characterId = dataPath !== null ? dataPath.params.id : null;

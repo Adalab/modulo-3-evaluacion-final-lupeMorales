@@ -1,18 +1,113 @@
+@import "../core/variables.scss";
 .detail {
   background-color: #dcab8b;
   width: 100%;
   height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 0;
+  padding: 20px 0;
   &__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
+    padding: 25px 0;
     background-color: #256d69;
-    width: 75%;
+    width: 95%;
+    height: auto;
     border-radius: 25px;
+
+    @media all and (min-width: 768px) {
+      flex-direction: row;
+    }
   }
+
+  &__img {
+    display: block;
+    width: 180px;
+    height: 257px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  &__info {
+    color: #e3e3c9;
+    @media all and (min-width: 768px) {
+    }
+  }
+  &__title {
+    font-family: $secondaryFont;
+    font-size: 2.8rem;
+    transform: scaleX(1.2);
+    font-weight: 400;
+    margin-top: 20px;
+  }
+  &__text {
+    font-size: 1.8rem;
+  }
+}
+.border-Gryffindor {
+  width: 200px;
+  height: 275px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  box-shadow: 3px 3px 20px 3px #ccc;
+  background: repeating-linear-gradient(
+    45deg,
+    #ffc500,
+    #ffc500 10px,
+    #7f0909 5px,
+    #7f0909 60px
+  );
+}
+.border-Slytherin {
+  width: 200px;
+  height: 275px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  box-shadow: 3px 3px 20px 3px #ccc;
+  background: repeating-linear-gradient(
+    45deg,
+    #2d701b,
+    #2d701b 10px,
+    #9aa6a8 5px,
+    #9aa6a8 60px
+  );
+}
+.border-Hufflepuff {
+  width: 200px;
+  height: 275px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  box-shadow: 3px 3px 20px 3px #ccc;
+  background: repeating-linear-gradient(
+    45deg,
+    #f19515,
+    #f19515 10px,
+    #33210a 5px,
+    #33210a 60px
+  );
+}
+.border-Ravenclaw {
+  width: 200px;
+  height: 275px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  box-shadow: 3px 3px 20px 3px #ccc;
+  background: repeating-linear-gradient(
+    45deg,
+    #b78d61,
+    #b78d61 10px,
+    #00547d 5px,
+    #00547d 60px
+  );
 }
