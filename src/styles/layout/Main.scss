@@ -16,18 +16,19 @@
     justify-items: center;
     gap: 45px 20px;
   }
-  &__arrow {
-    position: absolute;
-    right: 40px;
+  /*   &__arrow {
+    position: relative;
+    left: 95%;
     color: $deepGreen;
   }
   &__arrow:hover {
     transform: scale(1.3);
-  }
+  } */
 }
 .warning {
   width: 100%;
   height: 50vh;
+
   &__msg {
     margin: auto;
     font-family: $secondaryFont;

@@ -3,14 +3,7 @@ import imageDefault from "../images/imgDefault.png";
 import { Link } from "react-router-dom";
 
 const CharacterDetails = (props) => {
-  const char = () => {
-    if (props.characters) {
-      return props.characters;
-    } else {
-      /*   return console.log("no misiela"); */
-    }
-    return char;
-  };
+  const char = props.character === true ? props.character : {};
 
   return (
     <section className="detail">
@@ -30,7 +23,9 @@ const CharacterDetails = (props) => {
           <h3 className="detail__title">{props.character.name}</h3>
 
           <p className="detail__text">Raza: {props.character.specie}</p>
-          <p className="detail__text">Casa: {props.character.house}</p>
+          <p className="detail__text">
+            Casa: {props.character.house || "desconocido"}
+          </p>
           <p className="detail__text">
             Género:{" "}
             {props.character.gender === "male" ? (
