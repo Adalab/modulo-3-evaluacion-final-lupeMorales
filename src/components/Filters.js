@@ -30,7 +30,6 @@ const Filters = (props) => {
       />
 
       <button className="button" type="button" onClick={reset}>
-        {/* <i className="fa-regular fa-trash-can"></i> */}
         reset
       </button>
     </form>

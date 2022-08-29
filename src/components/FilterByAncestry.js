@@ -24,10 +24,10 @@ const FilterByAncestry = (props) => {
 
   return (
     <>
-      <label className="filter__label" htmlFor="ancestry">
+      <label className="filter__label  " htmlFor="ancestry">
         Por ancestros:
       </label>
-      <ul>{renderAncestry()}</ul>
+      <ul className="list__container">{renderAncestry()}</ul>
     </>
   );
 };
