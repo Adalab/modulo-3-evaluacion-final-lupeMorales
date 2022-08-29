@@ -6,13 +6,13 @@ const CharacterCard = (props) => {
   return (
     <li className="card">
       <Link to={`/character/${props.char.id}`}>
-        <article className="card__container" title="click para ver detalles">
+        <article className="card__container">
           <h3 className="card__name">{props.char.name}</h3>
           <img
             className="card__image"
             src={props.char.image || imageDefault}
             alt={`Foto de ${props.char.name}`}
-            title={`Foto de ${props.char.name}`}
+            title={`Ver detalles de ${props.char.name}`}
           ></img>
           <p className="card__text">{props.char.specie}</p>
         </article>

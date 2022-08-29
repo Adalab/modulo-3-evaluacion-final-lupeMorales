@@ -3,9 +3,10 @@ const FilterByAncestry = (props) => {
     props.handleFilterAncestry(ev.target.value);
   };
   const renderAncestry = () => {
-    return props.ancestry.map((item, index) => {
+    const ancestrySort = props.ancestry.sort();
+    return ancestrySort.map((item, index) => {
       return (
-        <li key={index}>
+        <li className="filter__list" key={index}>
           <input
             type="checkbox"
             name="ancestry"

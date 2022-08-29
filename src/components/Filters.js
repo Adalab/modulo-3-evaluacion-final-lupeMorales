@@ -18,11 +18,11 @@ const Filters = (props) => {
         inputFilterHouse={props.inputFilterHouse}
         handleFilterHouse={props.handleFilterHouse}
       />
-      {/*     <FilterByAncestry
+      <FilterByAncestry
         inputFilterAncestry={props.inputFilterAncestry}
         handleFilterAncestry={props.handleFilterAncestry}
         ancestry={props.ancestry}
-      /> */}
+      />
 
       <FilterByAlphabetic
         inputOrder={props.inputOrder}

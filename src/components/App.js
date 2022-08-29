@@ -15,15 +15,18 @@ import CharacterDetails from "./CharacterDetails";
 import Footer from "./Footer";
 
 function App() {
-  const lsInputHouse = ls.get("inputHouse", "gryffindor");
   //variables de estado
   const [dataCharacter, setDataCharacter] = useState([]);
   const [inputFilterName, setInputFilterName] = useState(
     ls.get("inputName", "")
   );
-  const [inputFilterHouse, setInputFilterHouse] = useState(lsInputHouse);
-  const [inputFilterAncestry, setInputAncestry] = useState([]);
-  const [inputOrder, setInputOrder] = useState(false);
+  const [inputFilterHouse, setInputFilterHouse] = useState(
+    ls.get("inputHouse", "gryffindor")
+  );
+  const [inputFilterAncestry, setInputAncestry] = useState(
+    ls.get("inputAncestry", [])
+  );
+  const [inputOrder, setInputOrder] = useState(ls.get("isOrder", false));
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -36,7 +39,9 @@ function App() {
   useEffect(() => {
     ls.set("imputName", inputFilterName);
     ls.set("imputHouse", inputFilterHouse);
-  }, [inputFilterName, inputFilterHouse]);
+    ls.set("isOrder", inputOrder);
+    ls.set("inputAncestry", inputFilterAncestry);
+  }, [inputFilterName, inputFilterHouse, inputOrder, inputFilterAncestry]);
 
   //recojo por liftinf el value que actualiza la variable de estado
   const handleFilterName = (inputValue) => {
