@@ -16,6 +16,14 @@
     justify-items: center;
     gap: 45px 20px;
   }
+  &__arrow {
+    position: absolute;
+    right: 40px;
+    color: $deepGreen;
+  }
+  &__arrow:hover {
+    transform: scale(1.3);
+  }
 }
 .warning {
   width: 100%;

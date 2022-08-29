@@ -3,6 +3,15 @@ import imageDefault from "../images/imgDefault.png";
 import { Link } from "react-router-dom";
 
 const CharacterDetails = (props) => {
+  const char = () => {
+    if (props.characters) {
+      return props.characters;
+    } else {
+      /*   return console.log("no misiela"); */
+    }
+    return char;
+  };
+
   return (
     <section className="detail">
       <article className="detail__container">

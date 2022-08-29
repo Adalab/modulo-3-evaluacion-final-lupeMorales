@@ -8,6 +8,10 @@ const CharacterList = (props) => {
   return (
     <section className="list">
       <ul className="list__element">{renderCharList}</ul>
+      <a href="/">
+        {" "}
+        <i className="fa-solid fa-arrow-up fa-xl list__arrow"></i>
+      </a>
     </section>
   );
 };
