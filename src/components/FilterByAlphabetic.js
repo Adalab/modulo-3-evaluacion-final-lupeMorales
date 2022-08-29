@@ -4,7 +4,8 @@ const FilterByAlphabetic = (props) => {
   };
 
   return (
-    <>
+    <div>
+      {" "}
       <input
         type="checkbox"
         name="order"
@@ -13,8 +14,10 @@ const FilterByAlphabetic = (props) => {
         checked={props.inputOrder}
         onChange={handleFilterOrder}
       ></input>
-      <label htmlFor="">Ordenar alfabeticamente</label>
-    </>
+      <label className="filter__label" htmlFor="">
+        Ordenar alfabeticamente
+      </label>
+    </div>
   );
 };
 export default FilterByAlphabetic;

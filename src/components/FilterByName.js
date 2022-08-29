@@ -15,7 +15,7 @@ const FilterByName = (props) => {
         Filtrar por personaje
       </label>
       <input
-        className="filter__text"
+        className="filter__input"
         type="search"
         name="searchName"
         placeholder="Harry Potter..."

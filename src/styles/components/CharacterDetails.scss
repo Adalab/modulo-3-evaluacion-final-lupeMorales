@@ -1,16 +1,17 @@
 @import "../core/variables.scss";
 .detail {
-  background-color: #dcab8b;
+  background-color: $deepGreen;
   width: 100%;
-  height: auto;
+  min-height: 80vh;
   padding: 20px 0;
   &__container {
+    position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
     margin: 0 auto;
     padding: 45px 0;
-    background-color: #256d69;
+    background-color: $deepGreen;
     width: 95%;
     height: auto;
     border-radius: 25px;
@@ -19,19 +20,22 @@
       flex-direction: row;
     }
   }
-
+  &__link {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    color: $softGreen;
+  }
   &__img {
-    display: block;
-    width: 180px;
-    height: 257px;
+    width: 200px;
+    height: 277px;
     object-fit: cover;
     border-radius: 10px;
   }
   &__info {
-    color: #e3e3c9;
+    color: $softGreen;
     line-height: 3rem;
-    @media all and (min-width: 768px) {
-    }
+    margin: auto;
   }
   &__title {
     font-family: $secondaryFont;
@@ -39,14 +43,21 @@
     transform: scaleX(1.2);
     font-weight: 400;
     margin: 55px auto 20px;
+    width: 250px;
+    line-height: 5.5rem;
+    text-align: center;
   }
   &__text {
     font-size: 2rem;
+    text-align: center;
+    @media all and (min-width: 768px) {
+      text-align: left;
+    }
   }
 }
 .border-Gryffindor {
-  width: 200px;
-  height: 275px;
+  width: 220px;
+  height: 295px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -55,15 +66,15 @@
   box-shadow: 3px 3px 20px 3px #ccc;
   background: repeating-linear-gradient(
     45deg,
-    #ffc500,
-    #ffc500 10px,
-    #7f0909 5px,
-    #7f0909 60px
+    $yellowGryffindor,
+    $yellowGryffindor 10px,
+    $redGryffindor 5px,
+    $redGryffindor 60px
   );
 }
 .border-Slytherin {
-  width: 200px;
-  height: 275px;
+  width: 220px;
+  height: 295px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -72,15 +83,15 @@
   box-shadow: 3px 3px 20px 3px #ccc;
   background: repeating-linear-gradient(
     45deg,
-    #9aa6a8,
-    #9aa6a8 10px,
-    #1e4214 5px,
-    #1e4214 60px
+    $greySlytherin,
+    $greySlytherin 10px,
+    $greenSlytherin 5px,
+    $greenSlytherin 60px
   );
 }
 .border-Hufflepuff {
-  width: 200px;
-  height: 275px;
+  width: 220px;
+  height: 295px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -89,15 +100,15 @@
   box-shadow: 3px 3px 20px 3px #ccc;
   background: repeating-linear-gradient(
     45deg,
-    #f19515,
-    #f19515 10px,
-    #33210a 5px,
-    #33210a 60px
+    $yellowHufflepuff,
+    $yellowHufflepuff 10px,
+    $brownHufflepuff 5px,
+    $brownHufflepuff 60px
   );
 }
 .border-Ravenclaw {
-  width: 200px;
-  height: 275px;
+  width: 220px;
+  height: 295px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -106,9 +117,9 @@
   box-shadow: 3px 3px 20px 3px #ccc;
   background: repeating-linear-gradient(
     45deg,
-    #b78d61,
-    #b78d61 10px,
-    #00547d 5px,
-    #00547d 60px
+    $ravenclaw1,
+    $ravenclaw1 10px,
+    $ravenclawBlue 5px,
+    $ravenclawBlue 60px
   );
 }

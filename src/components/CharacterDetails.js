@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 const CharacterDetails = (props) => {
   return (
     <section className="detail">
-      <Link to="/" title="volver">
-        <i class="fa-solid fa-door-open fa-lg"></i>
-      </Link>
       <article className="detail__container">
+        <Link to="/" className="detail__link" title="Vuelve a búsqueda">
+          <i className="fa-solid fa-door-open fa-xl"></i>
+        </Link>
         <div className={`border-${props.character.house}`}>
           <img
             className="detail__img"
@@ -17,7 +17,6 @@ const CharacterDetails = (props) => {
             title={`Foto de ${props.character.name}`}
           ></img>
         </div>
-
         <div className="detail__info">
           <h3 className="detail__title">{props.character.name}</h3>
 
@@ -26,9 +25,9 @@ const CharacterDetails = (props) => {
           <p className="detail__text">
             Género:{" "}
             {props.character.gender === "male" ? (
-              <i class="fa-solid fa-mars"></i>
+              <i className="fa-solid fa-mars"></i>
             ) : (
-              <i class="fa-solid fa-venus"></i>
+              <i className="fa-solid fa-venus"></i>
             )}
           </p>
           <p className="detail__text">
@@ -37,9 +36,9 @@ const CharacterDetails = (props) => {
           <p className="detail__text">
             Status:{" "}
             {props.character.status === true ? (
-              <i class="fa-solid fa-heart"></i>
+              <i className="fa-solid fa-heart"></i>
             ) : (
-              <i class="fa-solid fa-skull"></i>
+              <i className="fa-solid fa-skull"></i>
             )}
           </p>
         </div>
@@ -47,4 +46,5 @@ const CharacterDetails = (props) => {
     </section>
   );
 };
+
 export default CharacterDetails;

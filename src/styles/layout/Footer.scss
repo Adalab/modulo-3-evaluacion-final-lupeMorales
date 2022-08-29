@@ -1,11 +1,12 @@
+@import "../core/variables.scss";
 .footer {
   width: 100%;
   height: auto;
   display: flex;
   justify-content: space-between;
   padding: 15px 20px;
-  background-color: #e3e3c9;
-  color: #256d69;
+  background-color: $softGreen;
+  color: $deepGreen;
   &__text {
     font-size: 1.2rem;
   }
@@ -15,7 +16,7 @@
   }
 }
 .fa-brands {
-  color: #256d69;
+  color: $deepGreen;
   list-style: none;
   padding: 0 5px;
 }

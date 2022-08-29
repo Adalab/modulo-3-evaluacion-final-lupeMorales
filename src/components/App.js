@@ -21,7 +21,7 @@ function App() {
   const [inputFilterName, setInputFilterName] = useState(
     ls.get("inputName", "")
   );
-  const [inputFiterHouse, setInputFilterHouse] = useState(lsInputHouse);
+  const [inputFilterHouse, setInputFilterHouse] = useState(lsInputHouse);
   const [inputFilterAncestry, setInputAncestry] = useState([]);
   const [inputOrder, setInputOrder] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -35,9 +35,10 @@ function App() {
   }, []);
   useEffect(() => {
     ls.set("imputName", inputFilterName);
-    ls.set("imputHouse", setInputFilterHouse);
-  }, [inputFilterName, setInputFilterHouse]);
+    ls.set("imputHouse", inputFilterHouse);
+  }, [inputFilterName, inputFilterHouse]);
 
+  //recojo por liftinf el value que actualiza la variable de estado
   const handleFilterName = (inputValue) => {
     setInputFilterName(inputValue);
   };
@@ -77,10 +78,10 @@ function App() {
         .includes(inputFilterName.toLocaleLowerCase());
     })
     .filter((item) => {
-      if (inputFiterHouse === "all") {
+      if (inputFilterHouse === "all") {
         return true;
       }
-      return item.house.toLowerCase() === inputFiterHouse;
+      return item.house.toLowerCase() === inputFilterHouse;
     })
     .filter((item) => {
       if (inputFilterAncestry.length === 0) {
@@ -97,9 +98,7 @@ function App() {
     return singleAncestry;
   };
 
-  //set
-
-  //oderna si checkbox esta pulsado OJOCUIDAO no lo entiendo
+  //oderna los datos si checkbox esta pulsado
   if (inputOrder === true) {
     filteredCharacters.sort((a, b) => {
       if (a.name > b.name) {
@@ -114,6 +113,7 @@ function App() {
   const resetForm = () => {
     setInputFilterName("");
     setInputFilterHouse("gryffindor");
+    setInputAncestry([]);
     setInputOrder(false);
   };
 
@@ -134,7 +134,7 @@ function App() {
                 <Filters
                   inputFilterName={inputFilterName}
                   handleFilterName={handleFilterName}
-                  inputFiterHouse={inputFiterHouse}
+                  inputFilterHouse={inputFilterHouse}
                   handleFilterHouse={handleFilterHouse}
                   inputFilterAncestry={inputFilterAncestry}
                   handleFilterAncestry={handleFilterAncestry}

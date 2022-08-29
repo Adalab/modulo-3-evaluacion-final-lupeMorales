@@ -1,21 +1,22 @@
+@import "../core/variables.scss";
 .card {
   list-style: none;
   &__container {
     width: 240px;
-    height: 310px;
-    background-color: #e3e3c9;
+    height: 320px;
+    background-color: $softGreen;
     border: 1px solid #bfbfbf;
     box-shadow: 5px 10px 18px #888888;
   }
   &__name {
-    color: #dcab8b;
+    color: $softOrange;
     text-transform: uppercase;
     text-align: right;
     padding: 10px;
   }
   &__text {
     font-size: 1.4rem;
-    color: #dcab8b;
+    color: $softOrange;
     text-align: center;
     margin: 5px auto;
   }
@@ -27,4 +28,7 @@
     border-radius: 10px;
     object-fit: cover;
   }
+}
+.card:hover {
+  transform: scale(0.9);
 }

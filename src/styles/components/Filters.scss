@@ -1,0 +1,36 @@
+@import "../core/variables.scss";
+.filter {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 10px;
+  @media all and (min-width: 768px) {
+    justify-content: space-evenly;
+  }
+
+  &__label {
+    font-family: $secondaryFont;
+    font-size: 2.2rem;
+    color: $deepGreen;
+
+    text-transform: capitalize;
+    margin: 0 15px;
+  }
+
+  &__input {
+    border-radius: 25px;
+    border-color: $deepGreen;
+    padding: 5px;
+  }
+}
+
+.button {
+  width: 80px;
+  border-radius: 25px;
+  padding: 5px;
+  font-size: 1.8rem;
+  font-family: $secondaryFont;
+  text-transform: uppercase;
+  color: $softGreen;
+  background-color: $deepGreen;
+}

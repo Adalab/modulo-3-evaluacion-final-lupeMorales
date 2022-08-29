@@ -1,8 +1,9 @@
+@import "../core/variables.scss";
 .wrapper {
   display: flex;
 }
 .loader {
-  color: #a2cbad;
+  color: $deepGreen;
   display: inline-block;
   position: relative;
   width: 80px;

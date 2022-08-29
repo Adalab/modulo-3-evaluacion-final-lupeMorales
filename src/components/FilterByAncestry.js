@@ -12,7 +12,7 @@ const FilterByAncestry = (props) => {
             value={item}
             onChange={handleFilterAncestry}
           />
-          <label htmlFor="ancestry">
+          <label className="filter__text" htmlFor="ancestry">
             {" "}
             {item === "" ? "desconocido" : item}
           </label>
@@ -23,7 +23,9 @@ const FilterByAncestry = (props) => {
 
   return (
     <>
-      <label htmlFor="ancestry">Por ancestros:</label>
+      <label className="filter__label" htmlFor="ancestry">
+        Por ancestros:
+      </label>
       <ul>{renderAncestry()}</ul>
     </>
   );

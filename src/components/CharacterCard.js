@@ -3,12 +3,10 @@ import imageDefault from "../images/imgDefault.png";
 
 import { Link } from "react-router-dom";
 const CharacterCard = (props) => {
-
   return (
     <li className="card">
       <Link to={`/character/${props.char.id}`}>
-        <article className="card__container">
-          
+        <article className="card__container" title="click para ver detalles">
           <h3 className="card__name">{props.char.name}</h3>
           <img
             className="card__image"
@@ -17,7 +15,6 @@ const CharacterCard = (props) => {
             title={`Foto de ${props.char.name}`}
           ></img>
           <p className="card__text">{props.char.specie}</p>
-          {/* <p>Ver Detalle</p> */}
         </article>
       </Link>
     </li>
