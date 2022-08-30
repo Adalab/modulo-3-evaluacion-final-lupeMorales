@@ -60,12 +60,26 @@ function App() {
     setInputOrder(value);
   };
 
+  const getRandomMsg = () => {
+    const mesages = [
+      "No hay encantamiento que encuentre a ",
+      "Ni el mejor buscar de Quiddith daría con ",
+      "Mira en la Sala de los Menesteres porque aqui no está ",
+      "Te vas a quedar petrificus totalus cuando sepas que no encontramos a ",
+      "No lo encontramos, parece que le gusta mucho tomar pocion multijugos a",
+      "Vaya, no aparece. El Ministerio de Magia también anda buscando a ",
+    ];
+    const msg = mesages[Math.floor(Math.random() * mesages.length)];
+    return msg;
+  };
+  console.log(getRandomMsg());
+
   const searchResult = () => {
     if (inputFilterName !== "" && filteredCharacters.length === 0) {
       return (
         <div className="warning">
           <p className="warning__msg">
-            Oh vaya! No hay encantamiento que encuentre a
+            {getRandomMsg()}
             <span className="warning__msg--strong"> {inputFilterName}</span>
           </p>
         </div>
