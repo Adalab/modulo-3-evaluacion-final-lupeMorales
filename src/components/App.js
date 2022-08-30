@@ -63,11 +63,12 @@ function App() {
   const getRandomMsg = () => {
     const mesages = [
       "No hay encantamiento que encuentre a ",
-      "Ni el mejor buscar de Quiddith daría con ",
+      "Ni el mejor buscador de Quiddith daría con ",
       "Mira en la Sala de los Menesteres porque aqui no está ",
       "Te vas a quedar petrificus totalus cuando sepas que no encontramos a ",
-      "No lo encontramos, parece que le gusta mucho tomar pocion multijugos a",
+      "No lo encontramos, parece que le gusta mucho tomar pocion multijugos a ",
       "Vaya, no aparece. El Ministerio de Magia también anda buscando a ",
+      "Estaba dentro de un Armario Evanescente la última vez que vieron a ",
     ];
     const msg = mesages[Math.floor(Math.random() * mesages.length)];
     return msg;
