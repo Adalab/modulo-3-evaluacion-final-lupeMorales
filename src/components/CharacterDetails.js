@@ -1,6 +1,6 @@
 import "../styles/components/CharacterDetails.scss";
 import imageDefault from "../images/imgDefault.png";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const CharacterDetails = (props) => {
   return (

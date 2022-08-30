@@ -7,7 +7,6 @@ HARRY POTTER character finder es un buscador web de personajes de Harry Potter. 
 
 Está realizada usando React
 
-![screenshot](https://github.com/Adalab/modulo-2-evaluacion-final-lupeMorales/blob/main/src/images/view.png?raw=true)
 
 ## Tecnologías o lenguajes utilizados
 React

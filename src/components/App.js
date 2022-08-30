@@ -3,7 +3,7 @@ import callToApi from "../services/api";
 import ls from "../services/localStorage";
 import { useEffect, useState } from "react";
 //route
-import { matchPath, useLocation } from "react-router-dom";
+import { matchPath, useLocation, useParams } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 //components
 import Loader from "./Loader";
