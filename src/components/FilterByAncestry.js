@@ -31,4 +31,8 @@ const FilterByAncestry = (props) => {
     </>
   );
 };
+FilterByAncestry.defaultProps = {
+  inputType: "checkbox",
+};
+
 export default FilterByAncestry;

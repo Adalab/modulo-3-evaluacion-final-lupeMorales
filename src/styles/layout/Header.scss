@@ -1,12 +1,15 @@
 @import "../core/variables.scss";
 .header {
   width: 100%;
-  height: 30vh;
+  height: 25vh;
   background-color: $softGreen;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @media all and (min-width: 768px) {
+    height: 30vh;
+  }
 
   &__title {
     font-family: $secondaryFont;

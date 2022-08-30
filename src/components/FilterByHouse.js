@@ -3,7 +3,7 @@ const FilterByHouse = (props) => {
     props.handleFilterHouse(ev.target.value);
   };
   return (
-    <div>
+    <>
       <label className="filter__label" htmlFor="filterHouse">
         Filtrar por casa
       </label>
@@ -20,7 +20,7 @@ const FilterByHouse = (props) => {
         <option value="hufflepuff">Hufflepuff</option>
         <option value="all">Todas</option>
       </select>
-    </div>
+    </>
   );
 };
 export default FilterByHouse;

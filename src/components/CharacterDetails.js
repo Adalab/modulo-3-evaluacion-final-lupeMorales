@@ -3,8 +3,6 @@ import imageDefault from "../images/imgDefault.png";
 import { Link } from "react-router-dom";
 
 const CharacterDetails = (props) => {
-  const char = props.character === true ? props.character : {};
-
   return (
     <section className="detail">
       <article className="detail__container">

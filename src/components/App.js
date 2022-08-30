@@ -49,14 +49,12 @@ function App() {
   const handleFilterHouse = (inputValue) => {
     setInputFilterHouse(inputValue);
   };
+
   const handleFilterAncestry = (value) => {
-    if (inputFilterAncestry.includes(value)) {
-      const position = inputFilterAncestry.indexOf(value);
-      filteredCharacters.splice(position, 1);
-      setInputAncestry(inputFilterAncestry);
-    } else {
-      setInputAncestry([...inputFilterAncestry, value]);
-    }
+    const set = new Set(inputFilterAncestry);
+    set.has(value)
+      ? setInputAncestry(inputFilterAncestry)
+      : setInputAncestry([...inputFilterAncestry, value]);
   };
   const handleFilterOrder = (value) => {
     setInputOrder(value);
