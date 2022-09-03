@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "./static/css/main.2c5b97c6.css",
-    "main.js": "./static/js/main.8e802f15.js",
+    "main.css": "./static/css/main.508d831b.css",
+    "main.js": "./static/js/main.3daabc0a.js",
+    "static/media/hogwarts.jpg": "./static/media/hogwarts.96f919c1091d8384681c.jpg",
     "static/media/harryPotter.ttf": "./static/media/harryPotter.a65869c0c1a4b3d4fcfc.ttf",
     "static/media/imgDefault.png": "./static/media/imgDefault.344e0d6f1b3a1b100bf5.png",
+    "static/media/hogwarts_dementors.jpg": "./static/media/hogwarts_dementors.f0dcee37a0a21ffae2f7.jpg",
     "index.html": "./index.html",
-    "main.2c5b97c6.css.map": "./static/css/main.2c5b97c6.css.map",
-    "main.8e802f15.js.map": "./static/js/main.8e802f15.js.map"
+    "main.508d831b.css.map": "./static/css/main.508d831b.css.map",
+    "main.3daabc0a.js.map": "./static/js/main.3daabc0a.js.map"
   },
   "entrypoints": [
-    "static/css/main.2c5b97c6.css",
-    "static/js/main.8e802f15.js"
+    "static/css/main.508d831b.css",
+    "static/js/main.3daabc0a.js"
   ]
 }
