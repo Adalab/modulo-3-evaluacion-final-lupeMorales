@@ -12,10 +12,13 @@ import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 import CharacterDetails from "./CharacterDetails";
 import Footer from "./Footer";
+import Error404 from "./Error404";
 
 function App() {
   //variables de estado
-  const [dataCharacter, setDataCharacter] = useState([]);
+  const [dataCharacter, setDataCharacter] = useState(
+    ls.get("characterList", [])
+  );
   const [inputFilterName, setInputFilterName] = useState(
     ls.get("inputName", "")
   );
@@ -26,6 +29,7 @@ function App() {
     ls.get("inputAncestry", [])
   );
   const [inputOrder, setInputOrder] = useState(ls.get("isOrder", false));
+  const [inputFilterActor, setInputFilterActor] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -36,11 +40,18 @@ function App() {
     });
   }, []);
   useEffect(() => {
+    ls.set("characterList", dataCharacter);
     ls.set("imputName", inputFilterName);
     ls.set("imputHouse", inputFilterHouse);
     ls.set("isOrder", inputOrder);
     ls.set("inputAncestry", inputFilterAncestry);
-  }, [inputFilterName, inputFilterHouse, inputOrder, inputFilterAncestry]);
+  }, [
+    dataCharacter,
+    inputFilterName,
+    inputFilterHouse,
+    inputOrder,
+    inputFilterAncestry,
+  ]);
 
   //recojo por liftinf el value que actualiza la variable de estado
   const handleFilterName = (inputValue) => {
@@ -56,6 +67,9 @@ function App() {
       ? setInputAncestry(inputFilterAncestry)
       : setInputAncestry([...inputFilterAncestry, value]);
   };
+  const handleFilterActor = (value) => {
+    setInputFilterActor(value);
+  };
   const handleFilterOrder = (value) => {
     setInputOrder(value);
   };
@@ -69,11 +83,12 @@ function App() {
       "No lo encontramos, parece que le gusta mucho tomar pocion multijugos a ",
       "Vaya, no aparece. El Ministerio de Magia también anda buscando a ",
       "Estaba dentro de un Armario Evanescente la última vez que vieron a ",
+      "Pregunta en Azkaban porque por aquí no aparece ",
+      "Puede que lleve una capa de invisivilidad porque no vemos a ",
     ];
     const msg = mesages[Math.floor(Math.random() * mesages.length)];
     return msg;
   };
-  console.log(getRandomMsg());
 
   const searchResult = () => {
     if (inputFilterName !== "" && filteredCharacters.length === 0) {
@@ -88,11 +103,28 @@ function App() {
     }
   };
 
+  //oderna los datos si checkbox esta pulsado
+  const orderByAlphabetic = () => {
+    if (inputOrder === true) {
+      filteredCharacters.sort((a, b) => {
+        if (a.name > b.name) {
+          return 1;
+        }
+        if (a.name < b.name) {
+          return -1;
+        }
+        return 0;
+      });
+    }
+  };
   const filteredCharacters = dataCharacter
     .filter((item) => {
       return item.name
         .toLowerCase()
         .includes(inputFilterName.toLocaleLowerCase());
+    })
+    .filter((item) => {
+      return item.actor.toLowerCase().includes(inputFilterActor.toLowerCase());
     })
     .filter((item) => {
       if (inputFilterHouse === "all") {
@@ -107,6 +139,7 @@ function App() {
         return inputFilterAncestry.includes(item.ancestry);
       }
     });
+  orderByAlphabetic();
   const getAncestry = () => {
     const ancestry = dataCharacter.map((item) => item.ancestry);
     //set para quedarme solo con valores unicos
@@ -115,18 +148,6 @@ function App() {
     return singleAncestry;
   };
 
-  //oderna los datos si checkbox esta pulsado
-  if (inputOrder === true) {
-    filteredCharacters.sort((a, b) => {
-      if (a.name > b.name) {
-        return 1;
-      }
-      if (a.name < b.name) {
-        return -1;
-      }
-      return 0;
-    });
-  }
   const resetForm = () => {
     setInputFilterName("");
     setInputFilterHouse("gryffindor");
@@ -156,6 +177,8 @@ function App() {
                   inputFilterAncestry={inputFilterAncestry}
                   handleFilterAncestry={handleFilterAncestry}
                   ancestry={getAncestry()}
+                  handleFilterActor={handleFilterActor}
+                  inputFilterActor={inputFilterActor}
                   inputOrder={inputOrder}
                   handleFilterOrder={handleFilterOrder}
                   resetForm={resetForm}
@@ -175,6 +198,8 @@ function App() {
           path="/character/:id"
           element={<CharacterDetails character={foundCharacters} />}
         ></Route>
+        {/*  <Route path="/error" element={<Error404 />} /> */}
+        <Route path="*" element={<Error404 />} />
       </Routes>
       <Footer />
     </div>

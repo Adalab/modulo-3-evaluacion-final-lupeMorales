@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/layout/Main.scss";
 import CharacterCard from "./CharacterCard";
 
@@ -8,10 +9,9 @@ const CharacterList = (props) => {
   return (
     <section className="list">
       <ul className="list__element">{renderCharList}</ul>
-      {/*    <a href="./">
-        {" "}
+      {/*   <Link to="/error">
         <i className="fa-solid fa-arrow-up fa-xl list__arrow"></i>
-      </a> */}
+      </Link> */}
     </section>
   );
 };

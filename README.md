@@ -9,11 +9,11 @@ Está realizada usando React
 
 
 ## Tecnologías o lenguajes utilizados
-React
-HTML5
-SCSS
-Javascript
-NPM
+- React
+- HTML5
+- SCSS
+- Javascript
+- NPM
 
 ## Para ejecutar el programa en tu ordenador
 
@@ -32,7 +32,7 @@ Una vez todo instalado, es importante **arrancar el proyecto**, para ello tienes
    ```
 ## Recursos
 
- <p><a href="https://hp-api.herokuapp" target="_blank"> HP-API</a> abierto para la búsqueda de información sobre personajes de Harry Potter </p>
+ <p><a href="https://hp-api.herokuapp.com/" target="_blank"> HP-API</a> abierto para la búsqueda de información sobre personajes de Harry Potter </p>
 ## Contacto
 
 - GitHub [@lupeMorales](https://github.com/lupeMorales )

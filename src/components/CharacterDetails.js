@@ -1,8 +1,13 @@
 import "../styles/components/CharacterDetails.scss";
 import imageDefault from "../images/imgDefault.png";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Error404 from "./Error404";
+import NotFound from "./NotFound";
 
 const CharacterDetails = (props) => {
+  if (props.character === undefined) {
+    return <NotFound />;
+  }
   return (
     <section className="detail">
       <article className="detail__container">

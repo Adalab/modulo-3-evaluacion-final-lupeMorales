@@ -17,7 +17,7 @@ const FilterByName = (props) => {
       </label>
       <input
         className="filter__input"
-        type={props.inputType}
+        type="text"
         name="searchName"
         placeholder="Harry Potter..."
         value={props.inputFilterName}
@@ -27,7 +27,7 @@ const FilterByName = (props) => {
     </>
   );
 };
-FilterByName.defaultProps = {
+/* FilterByName.defaultProps = {
   inputType: "search",
 };
 
@@ -38,6 +38,6 @@ FilterByName.propTypes = {
   inputPlaceholder: PropTypes.string,
   inputValue: PropTypes.string,
   handleChange: PropTypes.func.isRequired,
-};
+}; */
 
 export default FilterByName;

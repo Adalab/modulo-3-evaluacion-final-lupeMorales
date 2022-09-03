@@ -3,6 +3,8 @@ import FilterByName from "./FilterByName";
 import FilterByHouse from "./FilterByHouse";
 import FilterByAncestry from "./FilterByAncestry";
 import FilterByAlphabetic from "./FilterByAlphabetic";
+import FilterByActor from "./FilterByActor";
+
 const Filters = (props) => {
   const reset = (ev) => {
     ev.preventDefault();
@@ -23,7 +25,10 @@ const Filters = (props) => {
         handleFilterAncestry={props.handleFilterAncestry}
         ancestry={props.ancestry}
       />
-
+      <FilterByActor
+        inputFilterActor={props.inputFilterActor}
+        handleFilterActor={props.handleFilterActor}
+      />
       <FilterByAlphabetic
         inputOrder={props.inputOrder}
         handleFilterOrder={props.handleFilterOrder}

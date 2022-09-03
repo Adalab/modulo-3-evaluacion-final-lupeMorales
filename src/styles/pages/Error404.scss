@@ -1,0 +1,53 @@
+@import "../core/variables.scss";
+
+.error {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    width: 100%;
+    height: 100vh;
+    padding: 0 15px;
+    /*   background-image: url(https://www.fubiz.net/wp-content/uploads/2015/12/harrypotter-6.gif); */
+    background-image: url("../../images/hogwarts_dementors.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__text {
+    margin-top: 15px;
+    text-align: center;
+    font-family: $secondaryFont;
+    letter-spacing: 0.2rem;
+    font-size: 16rem;
+    color: $softGreen;
+    opacity: 50%;
+    transform: scaleY(1.5);
+
+    &--sub {
+      font-size: 5rem;
+      font-family: $secondaryFont;
+      text-transform: uppercase;
+      letter-spacing: 0.4rem;
+      transform: scaleX(1.5);
+      color: $softGreen;
+      opacity: 50%;
+    }
+  }
+  &__button {
+    display: inline-block;
+    width: 110px;
+    height: 40px;
+    padding: 5px 10px;
+    margin: auto;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    color: $softGreen;
+    background-color: $deepGreen;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}

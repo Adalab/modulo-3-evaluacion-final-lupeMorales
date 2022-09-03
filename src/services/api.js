@@ -13,6 +13,7 @@ const callToApi = () => {
           house: item.house,
           gender: item.gender,
           ancestry: item.ancestry,
+          actor: item.actor,
         };
       });
       return dataApi;
