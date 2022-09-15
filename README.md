@@ -33,6 +33,7 @@ Una vez todo instalado, es importante **arrancar el proyecto**, para ello tienes
 ## Recursos
 
  <p><a href="https://hp-api.herokuapp.com/" target="_blank"> HP-API</a> abierto para la búsqueda de información sobre personajes de Harry Potter </p>
+
 ## Contacto
 
 - GitHub [@lupeMorales](https://github.com/lupeMorales )
