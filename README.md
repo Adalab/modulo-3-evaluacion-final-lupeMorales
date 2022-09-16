@@ -3,9 +3,25 @@
 # HARRY POTTER character finder <span> | </span>  <a href="https://lupemorales.github.io/Harry-Potter-character-finder/" target="_blank">   Demo </a><span> | </span>
 
 
-HARRY POTTER character finder es un buscador web de personajes de Harry Potter. Puedes filtrar la búsqueda según distintos criterios. Además al clickar sobre un personaje se despliegan más detalles del mismo.
+HARRY POTTER character finder es un buscador web de personajes de Harry Potter. Puedes filtrar la búsqueda según distintos criterios. Además al clickar sobre un personaje se despliegan más detalles del mismo.  
+
+Se trata de un diseño responseve que puede ser utilizado en cualquier dispositivo.
 
 Está realizada usando React
+
+### Web responsive mobile:
+
+![Mobile](./src/images/HPmobile_view.png)
+
+
+### Web responsive mobile detalles:
+
+![details](./src/images/HPmobile_detail.png)
+
+### Web responsive desktop:
+
+![desktop](./src/images/HPdesktop_view.png)
+
 
 
 ## Tecnologías o lenguajes utilizados
