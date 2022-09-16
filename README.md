@@ -1,6 +1,6 @@
 ![HarryPotter](https://github.com/Adalab/modulo-3-evaluacion-final-lupeMorales/blob/main/src/images/logoHP.jpg?raw=true)
 
-# HARRY POTTER character finder <span> | </span>  <a href="http://beta.adalab.es/modulo-3-evaluacion-final-lupeMorales/" target="_blank">   Demo </a><span> | </span>
+# HARRY POTTER character finder <span> | </span>  <a href="https://lupemorales.github.io/Harry-Potter-character-finder/" target="_blank">   Demo </a><span> | </span>
 
 
 HARRY POTTER character finder es un buscador web de personajes de Harry Potter. Puedes filtrar la búsqueda según distintos criterios. Además al clickar sobre un personaje se despliegan más detalles del mismo.
