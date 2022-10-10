@@ -5,7 +5,7 @@
 
 HARRY POTTER character finder es un buscador web de personajes de Harry Potter. Puedes filtrar la búsqueda según distintos criterios. Además al clickar sobre un personaje se despliegan más detalles del mismo.  
 
-Se trata de un diseño responseve que puede ser utilizado en cualquier dispositivo.
+Se trata de un diseño responsivo que puede ser utilizado en cualquier dispositivo.
 
 Está realizada usando React
 
