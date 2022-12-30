@@ -2,7 +2,7 @@ import "../styles/layout/Footer.scss";
 const Footer = () => {
   return (
     <footer className="footer">
-      <p className="footer__text">2022&copy; lupeMorales</p>
+      <p className="footer__text">2022&copy; made with ♥️ lupeMorales</p>
       <div>
         <p className="footer__text">see more about me on:</p>
         <nav className="footer__nav">
